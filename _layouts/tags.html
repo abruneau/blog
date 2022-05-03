@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<h2>{{ page.tag }}</h2>
+
+<!-- <div class="tags">
+    <p>
+        {% for tag in page.tags %}
+        <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} | Tags: {{ post
+        | tags }})
+        {% endfor %}
+    </p>
+</div> -->
+
+
+<ul>
+    {% for post in page.posts %}
+    <li><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} | Tags: {{ post
+        | tags }})</li>
+    {% endfor %}
+</ul>
+
+<div id="tag-cloud" class="tags">
+    {{ site | tag_cloud }}
+</div>
